@@ -1,5 +1,5 @@
 {% set name = "pyposeidon" %}
-{% set version = "0.5.2" %}
+{% set version = "0.6.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/ec-jrc/pyPoseidon/archive/{{ version }}.tar.gz
-  sha256: db16f8215bbd534b2c0bce5617894aebdecd76b88016618ba8ce220dca75005e
+  sha256: 89a975a60af560ffd3c645056cca530961f6fefd5541cd042052d4159abec093
 
 build:
   noarch: python
   number: {{ build }}
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -40,14 +40,14 @@ requirements:
     - zarr
 
 test:
- imports:
-   - pyposeidon
+  imports:
+    - pyposeidon
 
 about:
   home: https://github.com/ec-jrc/pyPoseidon
   license: EUPL-1.2
   license_file: LICENSE
-  summary: 'Framework for Hydrodynamic simulations'
+  summary: Framework for Hydrodynamic simulations
 
   # The remaining entries in this section are optional, but recommended.
   description: |
