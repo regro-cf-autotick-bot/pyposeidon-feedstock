@@ -1,7 +1,7 @@
 About pyposeidon
 ================
 
-Home: https://github.com/ec-jrc/pyPoseidon
+Home: https://github.com/ec-jrc/pyposeidon
 
 Package license: EUPL-1.2
 
@@ -38,6 +38,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyposeidon-green.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyposeidon--base-green.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) |
 
 Installing pyposeidon
 =====================
@@ -49,10 +50,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyposeidon` can be installed with:
+Once the `conda-forge` channel has been enabled, `pyposeidon, pyposeidon-base` can be installed with:
 
 ```
-conda install pyposeidon
+conda install pyposeidon pyposeidon-base
 ```
 
 It is possible to list all of the versions of `pyposeidon` available on your platform with:
@@ -65,7 +66,8 @@ conda search pyposeidon --channel conda-forge
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
