@@ -1,5 +1,5 @@
 {% set name = "pyposeidon" %}
-{% set version = "0.5.2" %}
+{% set version = "0.6.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,43 +8,80 @@ package:
 
 source:
   url: https://github.com/ec-jrc/pyPoseidon/archive/{{ version }}.tar.gz
-  sha256: db16f8215bbd534b2c0bce5617894aebdecd76b88016618ba8ce220dca75005e
+  sha256: 89a975a60af560ffd3c645056cca530961f6fefd5541cd042052d4159abec093
 
 build:
   noarch: python
   number: {{ build }}
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
-requirements:
-  build:
-  host:
-    - pip
-    - python >=3.6
-    - setuptools
-    - poetry
-    - poetry-core
-  run:
-    - python >=3.6
-    - mayavi
-    - pyresample
-    - pygeos >=0.7.1
-    - geoviews
-    - rasterio
-    - jigsaw =0.9.12
-    - hvplot
-    - descartes
-    - cfgrib <0.9.9
-    - moviepy
-    - colorlog
-    - f90nml
-    - zarr
+outputs:
+  - name: pyposeidon-base
+    script: build_base.sh
+    build:
+      noarch: python
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - pip
+        - python
+      run:
+        - python
+        - pyresample
+        - pygeos >=0.10
+        - rasterio
+        - rioxarray
+        - jigsaw
+        - cfgrib
+        - colorlog
+        - f90nml
+        - zarr
+        - gmsh >=4.8.4
+        - python-gmsh
+        - tqdm
+        - xarray
+        - pandas
+        - geopandas >=0.10.1
+        - numpy
+        - psutil
+        - requests
+        - scipy
+        - netCDF4
+        - dask
+        - shapely =1.7.1
+        - pydap >=3.3.0
 
-test:
- imports:
-   - pyposeidon
+    test:
+      imports:
+        - pyposeidon
+
+  - name: pyposeidon
+    requirements:
+      host:
+        - pip
+        - python
+      run:
+        - python
+        - {{ pin_subpackage('pyposeidon-base', exact=True) }}
+        - holoviews
+        - geoviews
+        - hvplot
+        - ipympl
+        - itkwidgets
+        - mayavi
+        - matplotlib-base >=3.3
+        - cartopy <=0.20
+        - ffmpeg
+        - spatialpandas
+
+    test:
+      imports:
+        - pyposeidon
+
 
 about:
-  home: https://github.com/ec-jrc/pyPoseidon
+  home: https://github.com/ec-jrc/pyposeidon
   license: EUPL-1.2
   license_file: LICENSE
   summary: 'Framework for Hydrodynamic simulations'
