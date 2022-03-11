@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/ec-jrc/pyPoseidon/archive/{{ version }}.tar.gz
-  sha256: 89a975a60af560ffd3c645056cca530961f6fefd5541cd042052d4159abec093
+  sha256: d2eba8d0710e17b57c7578a4a0433b8e1451b8f19847a36343a0fe57e8b085c7
 
 build:
   noarch: python
@@ -54,7 +54,6 @@ outputs:
 
     test:
       imports:
-        - pyposeidon
 
   - name: pyposeidon
     requirements:
@@ -63,7 +62,7 @@ outputs:
         - python
       run:
         - python
-        - {{ pin_subpackage('pyposeidon-base', exact=True) }}
+        - {{ pin_subpackage("pyposeidon-base",  max_pin="x.x.x") }}
         - holoviews
         - geoviews
         - hvplot
@@ -77,7 +76,6 @@ outputs:
 
     test:
       imports:
-        - pyposeidon
 
 
 about:
