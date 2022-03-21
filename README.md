@@ -1,5 +1,5 @@
-About pyposeidon
-================
+About pyposeidon-split
+======================
 
 Home: https://github.com/ec-jrc/pyposeidon
 
@@ -40,10 +40,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyposeidon-green.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyposeidon.svg)](https://anaconda.org/conda-forge/pyposeidon) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyposeidon--base-green.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyposeidon-base.svg)](https://anaconda.org/conda-forge/pyposeidon-base) |
 
-Installing pyposeidon
-=====================
+Installing pyposeidon-split
+===========================
 
-Installing `pyposeidon` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pyposeidon-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -102,17 +102,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating pyposeidon-feedstock
-=============================
+Updating pyposeidon-split-feedstock
+===================================
 
-If you would like to improve the pyposeidon recipe or build a new
+If you would like to improve the pyposeidon-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/pyposeidon-feedstock are
+Note that all branches in the conda-forge/pyposeidon-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
