@@ -1,6 +1,6 @@
 {% set name = "pyposeidon" %}
 {% set version = "0.6.0" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: {{ name|lower }}
@@ -22,10 +22,10 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.8,<3.9
+        - python {{ python_min }}
         - poetry-core >=1.0.0
       run:
-        - python >=3.8,<3.9
+        - python >={{ python_min }},<3.9
         - pyresample
         - pygeos >=0.10
         - rasterio
@@ -51,6 +51,8 @@ outputs:
         - pydap >=3.3.0
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - pyposeidon
 
@@ -59,9 +61,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8,<3.9
+        - python {{ python_min }}
       run:
-        - python >=3.8,<3.9
+        - python >={{ python_min }},<3.9
         - {{ pin_subpackage("pyposeidon-base", exact=True) }}
         - holoviews
         - geoviews >=1.9.4
@@ -75,6 +77,8 @@ outputs:
         - spatialpandas
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - pyposeidon
 
